@@ -19,6 +19,7 @@
         .mermaid {
             margin: 0 auto;
             max-width: 100%;
+            cursor: pointer;
         }
         #description-box {
             display: none;
@@ -77,61 +78,71 @@
     </div>
 
     <script>
-        // Descrições detalhadas
+        // Descrições detalhadas para os nós
         const descriptions = {
             "A": `
-                **Pesquisa e Seleção de Palavras-Chave**  
-                **Objetivo**: Mapear as necessidades informacionais da organização e selecionar palavras-chave que refletem o conteúdo informacional.  
-                **Etapas**:  
-                1. Levantamento das Necessidades Informacionais  
-                2. Identificação de Palavras-Chave  
-                3. Análise de Tendências  
-                4. Criação de um Documento de Estratégia de Palavras-Chave  
-                **Saída**: Lista de palavras-chave e temas críticos.
+                <b>Pesquisa e Seleção de Palavras-Chave</b><br>
+                <b>Objetivo:</b> Mapear as necessidades informacionais da organização e selecionar palavras-chave que refletem o conteúdo informacional.<br>
+                <b>Etapas:</b><br>
+                1. Levantamento das Necessidades Informacionais<br>
+                2. Identificação de Palavras-Chave<br>
+                3. Análise de Tendências<br>
+                4. Criação de um Documento de Estratégia de Palavras-Chave<br>
+                <b>Saída:</b> Lista de palavras-chave e temas críticos.
             `,
             "B": `
-                **Implementação de SEO On-Page**  
-                **Objetivo**: Estruturar e organizar as informações da organização para facilitar a recuperação interna e melhorar a visibilidade nos mecanismos de busca.  
-                **Etapas**:  
-                1. Meta Tags  
-                2. Tags de título  
-                3. Meta Descrição  
-                4. Tags de Cabeçalho (H1, H2, etc.)  
-                5. Palavras-chave  
-                6. Otimização de Imagens  
-                **Saída**: Organização eficiente e visibilidade nos sistemas internos e externos.
+                <b>Implementação de SEO On-Page</b><br>
+                <b>Objetivo:</b> Estruturar e organizar as informações da organização para facilitar a recuperação interna e melhorar a visibilidade nos mecanismos de busca.<br>
+                <b>Etapas:</b><br>
+                1. Meta Tags<br>
+                2. Tags de título<br>
+                3. Meta Descrição<br>
+                4. Tags de Cabeçalho (H1, H2, etc.)<br>
+                5. Palavras-chave<br>
+                6. Otimização de Imagens<br>
+                <b>Saída:</b> Organização eficiente e visibilidade nos sistemas internos e externos.
             `,
             "C": `
-                **Aplicação de SEO Off Page**  
-                **Objetivo**: Fortalecer a autoridade e visibilidade das informações organizacionais através de estratégias externas.  
-                **Etapas**:  
-                1. Conteúdo Compartilhável  
-                2. Interação organizacional  
-                3. Marcação Social  
-                4. Criação de Perfis e Envio de Artigos  
-                **Saída**: Autoridade e confiança nas informações publicadas.
+                <b>Aplicação de SEO Off Page</b><br>
+                <b>Objetivo:</b> Fortalecer a autoridade e visibilidade das informações organizacionais através de estratégias externas.<br>
+                <b>Etapas:</b><br>
+                1. Conteúdo Compartilhável<br>
+                2. Interação organizacional<br>
+                3. Marcação Social<br>
+                4. Criação de Perfis e Envio de Artigos<br>
+                <b>Saída:</b> Autoridade e confiança nas informações publicadas.
             `,
             "D": `
-                **Monitoramento e Análise de Desempenho**  
-                **Objetivo**: Monitorar continuamente o desempenho das informações e avaliar a eficácia das estratégias de SEO.  
-                **Etapas**:  
-                1. Rastrear o Desempenho de Palavras-Chave  
-                2. Avaliar as Taxas de Conversão de Informações  
-                3. Gerar Relatórios de Desempenho  
-                4. Ajustar Estratégias  
-                **Saída**: Melhorias contínuas e estratégias mais eficazes.
+                <b>Monitoramento e Análise de Desempenho</b><br>
+                <b>Objetivo:</b> Monitorar continuamente o desempenho das informações e avaliar a eficácia das estratégias de SEO.<br>
+                <b>Etapas:</b><br>
+                1. Rastrear o Desempenho de Palavras-Chave<br>
+                2. Avaliar as Taxas de Conversão de Informações<br>
+                3. Gerar Relatórios de Desempenho<br>
+                4. Ajustar Estratégias<br>
+                <b>Saída:</b> Melhorias contínuas e estratégias mais eficazes.
             `
         };
 
-        // Adicionar evento de clique no gráfico
-        document.addEventListener("click", (event) => {
-            const svgElement = event.target.closest("g"); // Captura o grupo <g> clicado no SVG
-            if (svgElement && svgElement.id && descriptions[svgElement.id]) {
-                showDescription(descriptions[svgElement.id]);
-            }
+        // Adiciona eventos para interatividade
+        document.addEventListener("DOMContentLoaded", () => {
+            const graphContainer = document.getElementById("graph-container");
+
+            // Aguarda o gráfico ser renderizado pelo Mermaid.js
+            setTimeout(() => {
+                const nodes = graphContainer.querySelectorAll("g[class^='node']");
+                nodes.forEach(node => {
+                    const nodeId = node.getAttribute("id"); // ID do nó
+                    if (descriptions[nodeId]) {
+                        node.addEventListener("click", () => {
+                            showDescription(descriptions[nodeId]);
+                        });
+                    }
+                });
+            }, 500); // Delay para garantir que o Mermaid.js termine de renderizar
         });
 
-        // Exibir descrição
+        // Função para exibir a descrição
         function showDescription(description) {
             const overlay = document.getElementById("overlay");
             const box = document.getElementById("description-box");
@@ -142,7 +153,7 @@
             box.style.display = "block";
         }
 
-        // Fechar descrição
+        // Função para fechar a descrição
         function closeDescription() {
             const overlay = document.getElementById("overlay");
             const box = document.getElementById("description-box");
@@ -153,3 +164,4 @@
     </script>
 </body>
 </html>
+
