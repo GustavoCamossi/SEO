@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxograma de SEO com Descrições</title>
+    <title>Fluxograma de SEO com Informações Dinâmicas</title>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
         mermaid.initialize({ startOnLoad: true });
@@ -21,48 +21,11 @@
             max-width: 100%;
             cursor: pointer;
         }
-        #description-box {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            max-width: 80%;
-            word-wrap: break-word;
-        }
-        #description-box button {
-            display: block;
-            margin: 10px auto 0;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #description-box button:hover {
-            background-color: #0056b3;
-        }
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
     </style>
 </head>
 <body>
-    <h1>Fluxograma de SEO com Descrições</h1>
-    <div class="mermaid">
+    <h1>Fluxograma de SEO com Informações Dinâmicas</h1>
+    <div id="graph-container" class="mermaid">
         graph TD
             A["Início: Integração de SEO na Gestão da Informação"] --> B["Identificação de Palavras-Chave"]
             B --> C["Análise de Tendências"]
@@ -70,49 +33,48 @@
             C --> E["Palavras-chave Relevantes"]
     </div>
 
-    <!-- Caixa de Descrição -->
-    <div id="overlay"></div>
-    <div id="description-box">
-        <p id="description-text"></p>
-        <button onclick="closeDescription()">Fechar</button>
-    </div>
-
     <script>
-        // Descrições das Caixas
+        // Definir as descrições para cada caixa
         const descriptions = {
-            "A": "Este é o ponto de partida para integrar estratégias de SEO na gestão da informação.",
-            "B": "Aqui identificamos palavras-chave usando ferramentas de SEO como SEMrush e Ahrefs.",
-            "C": "Analisamos tendências e competitividade para entender o comportamento do mercado.",
-            "D": "Descartamos palavras-chave que não são mais relevantes ou atuais.",
-            "E": "Selecionamos palavras-chave relevantes para priorizar nos próximos passos."
+            "A": "Integração de estratégias de SEO na gestão da informação é o ponto de partida para otimização.",
+            "B": "Identificação de palavras-chave usando ferramentas como SEMrush e Ahrefs.",
+            "C": "Análise de tendências e competitividade para priorizar palavras-chave relevantes.",
+            "D": "Palavras-chave que não são mais atuais são descartadas para evitar desperdício de recursos.",
+            "E": "Palavras-chave relevantes são priorizadas e integradas ao planejamento de conteúdo."
         };
 
-        // Evento ao clicar em caixas
-        document.addEventListener('click', (event) => {
+        // Elemento do gráfico
+        const graphContainer = document.getElementById("graph-container");
+
+        // Re-renderizar o gráfico com uma nova caixa ao clicar
+        graphContainer.addEventListener("click", (event) => {
             const element = event.target;
-            if (element.tagName === 'g' && element.id in descriptions) {
-                showDescription(descriptions[element.id]);
+            const nodeId = element.closest('g')?.id; // Verifica se clicou em um grupo <g> com ID
+
+            if (nodeId && descriptions[nodeId]) {
+                addDynamicNode(nodeId, descriptions[nodeId]);
             }
         });
 
-        // Mostrar a descrição
-        function showDescription(text) {
-            const overlay = document.getElementById('overlay');
-            const box = document.getElementById('description-box');
-            const descriptionText = document.getElementById('description-text');
-            descriptionText.textContent = text;
-
-            overlay.style.display = 'block';
-            box.style.display = 'block';
+        function addDynamicNode(nodeId, description) {
+            // Adicionar um novo nó ao gráfico
+            const newGraph = `
+                graph TD
+                    A["Início: Integração de SEO na Gestão da Informação"] --> B["Identificação de Palavras-Chave"]
+                    B --> C["Análise de Tendências"]
+                    C --> D["Palavras-chave não atuais"]
+                    C --> E["Palavras-chave Relevantes"]
+                    ${nodeId} --> NEW["${description}"]
+            `;
+            
+            // Re-renderizar o gráfico com o nó adicionado
+            renderGraph(newGraph);
         }
 
-        // Fechar a descrição
-        function closeDescription() {
-            const overlay = document.getElementById('overlay');
-            const box = document.getElementById('description-box');
-
-            overlay.style.display = 'none';
-            box.style.display = 'none';
+        function renderGraph(graphDefinition) {
+            mermaid.render('newGraph', graphDefinition, (svgCode) => {
+                graphContainer.innerHTML = svgCode;
+            });
         }
     </script>
 </body>
