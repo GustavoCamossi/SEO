@@ -21,6 +21,43 @@
             max-width: 100%;
             cursor: pointer;
         }
+        #description-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        #description-box button {
+            display: block;
+            margin: 10px auto 0;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #description-box button:hover {
+            background-color: #0056b3;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
@@ -32,8 +69,15 @@
             C --> D["Monitoramento e Análise de Desempenho"]
     </div>
 
+    <!-- Caixa de Descrição -->
+    <div id="overlay"></div>
+    <div id="description-box">
+        <p id="description-text"></p>
+        <button onclick="closeDescription()">Fechar</button>
+    </div>
+
     <script>
-        // Descrições das caixas
+        // Descrições para cada caixa do fluxograma
         const descriptions = {
             "A": `
                 **Pesquisa e Seleção de Palavras-Chave**  
@@ -79,35 +123,32 @@
             `
         };
 
-        // Elemento do gráfico
-        const graphContainer = document.getElementById("graph-container");
-
-        // Adicionar um novo nó ao clicar
-        graphContainer.addEventListener("click", (event) => {
-            const element = event.target.closest('g'); // Verifica o grupo <g> clicado
+        // Evento de clique no gráfico
+        document.addEventListener('click', (event) => {
+            const element = event.target.closest('g'); // Captura o grupo <g> clicado
             if (element && descriptions[element.id]) {
-                addDynamicNode(element.id, descriptions[element.id]);
+                showDescription(descriptions[element.id]);
             }
         });
 
-        function addDynamicNode(nodeId, description) {
-            // Criar uma nova representação gráfica com o nó extra
-            const newGraph = `
-                graph TD
-                    A["Pesquisa e Seleção de Palavras-Chave"] --> B["Implementação de SEO On-Page"]
-                    B --> C["Aplicação de SEO Off Page"]
-                    C --> D["Monitoramento e Análise de Desempenho"]
-                    ${nodeId} --> NEW["${description.replace(/\n/g, "<br>").replace(/"/g, '&quot;')}"]
-            `;
+        // Exibir a descrição em um pop-up
+        function showDescription(description) {
+            const overlay = document.getElementById('overlay');
+            const box = document.getElementById('description-box');
+            const descriptionText = document.getElementById('description-text');
 
-            // Re-renderizar o gráfico com o novo nó
-            renderGraph(newGraph);
+            descriptionText.innerHTML = description;
+            overlay.style.display = 'block';
+            box.style.display = 'block';
         }
 
-        function renderGraph(graphDefinition) {
-            mermaid.render('newGraph', graphDefinition, (svgCode) => {
-                graphContainer.innerHTML = svgCode;
-            });
+        // Fechar a descrição
+        function closeDescription() {
+            const overlay = document.getElementById('overlay');
+            const box = document.getElementById('description-box');
+
+            overlay.style.display = 'none';
+            box.style.display = 'none';
         }
     </script>
 </body>
