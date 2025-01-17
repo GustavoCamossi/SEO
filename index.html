@@ -1,89 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fluxograma de SEO</title>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    .mermaid {
-      margin: 0 auto;
-      max-width: 100%;
-    }
-    h1 {
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxograma de SEO - Menu Sanfonado</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .accordion {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background-color: #f4f4f4;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .accordion-header:hover {
+            background-color: #eaeaea;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 15px;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            padding: 15px;
+        }
+        .mermaid {
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
-  <h1>Fluxograma de SEO</h1>
-  <div class="mermaid">
-    graph TD
-      A["Início: Integração de SEO na Gestão da Informação"] --> B["Identificação de Palavras-Chave (Ferramentas de SEO)"]
-      B --> C["Análise de Tendências e Competitividade (Google Trends, etc.)"]
-      C --> D["Palavras-chave não atuais (descartar)"]
-      C --> E["Palavras-chave Relevantes (Reforçar)"]
-      C --> F["Competitividade Média"]
+    <h1>Fluxograma de SEO - Menu Sanfonado</h1>
 
-      E --> G["Refinamento de Palavras-Chave (ferramentas avançadas: Ahrefs, etc.)"]
-      F --> G
+    <div class="accordion">
+        <div class="accordion-header">SEO On-Page</div>
+        <div class="accordion-content">
+            <div class="mermaid">
+                graph TD
+                    I["Mapeamento de Conteúdos para Otimização SEO On-Page"] --> J["Classificação e Organização de Informações por Prioridade SEO"]
+                    J --> K["Aplicar Otimização de Meta Tags por Categoria de Conteúdo"]
+                    K --> L["Criação de Templates de SEO por Tipo de Documento"]
+                    L --> M["Integração de Keywords nos Textos e Seções"]
+                    M --> N["Geração de Relatórios de SEO e Otimização de Conteúdo"]
+                    N --> O["Validação Técnica de SEO"]
+            </div>
+        </div>
+    </div>
 
-      G --> H["Integração de Palavras-Chave no Plano de Conteúdo da Empresa"]
-      H --> I["Mapeamento de Conteúdos para Otimização SEO On-Page"]
-      H --> Fim["Fim do Processo de Integração SEO e Gestão da Informação"] 
-      H --> J["Classificação e Organização de Informações por Prioridade SEO"]
+    <div class="accordion">
+        <div class="accordion-header">SEO Off-Page</div>
+        <div class="accordion-content">
+            <div class="mermaid">
+                graph TD
+                    P["Início da Implementação de SEO Off-Page"] --> Q["Criação de Conteúdo Externo e Interno"]
+                    Q --> R["Conteúdo Compartilhável"]
+                    Q --> S["Guest Blogging"]
+                    Q --> T["Colaboração com Parceiros"]
+                    R --> U["Aumentar Distribuição Interna e Externa"]
+                    S --> V["Publicação de Artigos em Blogs Externos"]
+                    T --> W["Obtenção de Backlinks de Alta Qualidade"]
+            </div>
+        </div>
+    </div>
 
-      %% Seção de SEO On-Page
-      subgraph SEO_On_Page ["SEO On-Page"]
-        I --> J
-        J --> K["Aplicar Otimização de Meta Tags por Categoria de Conteúdo (dinâmica)"]
-        K --> L["Criação de Templates de SEO por Tipo de Documento"]
-        L --> M["Integração de Keywords nos Textos e Seções (Títulos, Subtítulos, etc.)"]
-        M --> N["Geração de Relatórios de SEO e Otimização de Conteúdo"]
-        N --> O["Validação Técnica de SEO (Monitoramento inicial)"]
-      end
+    <div class="accordion">
+        <div class="accordion-header">Monitoramento</div>
+        <div class="accordion-content">
+            <div class="mermaid">
+                graph TD
+                    AA["Monitoramento e Análise do Desempenho SEO"] --> BB["Monitorar Palavras-Chave em Ferramentas Analíticas"]
+                    BB --> CC["Avaliação do Tráfego por Palavras-Chave"]
+                    BB --> DD["Análise de Backlinks e Autoridade"]
+                    BB --> EE["Métricas de Conversão e Engajamento"]
+            </div>
+        </div>
+    </div>
 
-      %% Seção de SEO Off-Page (em paralelo)
-      subgraph SEO_Off_Page ["SEO Off-Page"]
-        P["Início da Implementação de SEO Off-Page"] --> Q["Criação de Conteúdo Externo e Interno"]
-        Q --> R["Conteúdo Compartilhável"]
-        Q --> S["Guest Blogging"]
-        Q --> T["Colaboração com Parceiros"]
-        R --> U["Aumentar Distribuição Interna e Externa"]
-        S --> V["Publicação de Artigos em Blogs Externos"]
-        T --> W["Obtenção de Backlinks de Alta Qualidade"]
-        U --> X["Aumento do Engajamento Social (Redes Sociais, Bookmarking)"]
-        V --> Y["Maior Autoridade Organizacional e Visibilidade"]
-        W --> Z["Integração em Plataformas de Bookmarking (Delicious)"]
-      end
+    <script>
+        // Script para a funcionalidade do menu sanfonado
+        const headers = document.querySelectorAll('.accordion-header');
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isOpen = content.classList.contains('open');
+                
+                // Fechar todas as seções
+                document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
 
-      %% Seção de Monitoramento (em paralelo)
-      subgraph Monitoramento ["Monitoramento e Análise do Desempenho SEO"]
-        AA["Monitoramento e Análise do Desempenho SEO"] --> BB["Monitorar Palavras-Chave em Ferramentas Analíticas (Google Analytics, SEMrush)"]
-        BB --> CC["Avaliação do Tráfego por Palavras-Chave"]
-        BB --> DD["Análise de Backlinks e Autoridade"]
-        BB --> EE["Métricas de Conversão e Engajamento"]
-        CC --> FF["Ajustar Estratégias de SEO (Baseado em Métricas)"]
-        DD --> GG["Refinar Palavras-Chave e Otimização Externa"]
-        EE --> HH["Geração de Relatórios para Ações Finais"]
-        FF --> II["Ciclo Contínuo de Otimização de Palavras-Chave e Estratégias SEO"]
-        GG --> II
-        HH --> JJ["Relatórios de Desempenho Final para Tomada de Decisões"]
-      end
-
-      %% Finalização do Processo
-      O --> Fim
-      Z --> Fim
-      II --> Fim 
-      JJ --> Fim 
-  </div>
-
-  <script>
-    mermaid.initialize({ startOnLoad: true });
-  </script>
+                // Abrir ou fechar a seção clicada
+                if (!isOpen) {
+                    content.classList.add('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
