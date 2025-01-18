@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluxograma de SEO com Informações Dinâmicas</title>
+    <title>Fluxograma de SEO</title>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
         mermaid.initialize({ startOnLoad: true });
@@ -13,155 +13,79 @@
             font-family: Arial, sans-serif;
             padding: 20px;
         }
-        h1 {
-            text-align: center;
-        }
         .mermaid {
             margin: 0 auto;
             max-width: 100%;
-            cursor: pointer;
         }
-        #description-box {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            max-width: 80%;
-            word-wrap: break-word;
-            border-radius: 10px;
-        }
-        #description-box button {
-            display: block;
-            margin: 15px auto 0;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #description-box button:hover {
-            background-color: #0056b3;
-        }
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+        h1 {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Fluxograma de SEO com Informações Dinâmicas</h1>
-    <div id="graph-container" class="mermaid">
-        graph TD
-            A["Pesquisa e Seleção de Palavras-Chave"] --> B["Implementação de SEO On-Page"]
-            B --> C["Aplicação de SEO Off Page"]
-            C --> D["Monitoramento e Análise de Desempenho"]
+    <h1>Fluxograma de SEO</h1>
+    <div class="mermaid">
+        <div class="mermaid">
+            graph TD
+                A["Início: Integração de SEO na Gestão da Informação"] --> B["Identificação de Palavras-Chave (Ferramentas de SEO)"]
+                B --> C["Análise de Tendências e Competitividade (Google Trends, etc.)"]
+                C --> D["Palavras-chave não atuais (descartar)"]
+                C --> E["Palavras-chave Relevantes (Reforçar)"]
+                C --> F["Competitividade Média"]
+                
+                E --> G["Refinamento de Palavras-Chave (ferramentas avançadas: Ahrefs, etc.)"]
+                F --> G
+                
+                G --> H["Integração de Palavras-Chave no Plano de Conteúdo da Empresa"]
+                H --> I["Mapeamento de Conteúdos para Otimização SEO On-Page"]
+                H --> KK["Fim do Processo de Integração SEO e Gestão da Informação"]
+                H --> J["Classificação e Organização de Informações por Prioridade SEO"]
+                
+                %% Seção de SEO On-Page
+                subgraph SEO_On_Page ["SEO On-Page"]
+                    I --> J["Classificação e Organização de Informações por Prioridade SEO"]
+                    J --> K["Aplicar Otimização de Meta Tags por Categoria de Conteúdo (dinâmica)"]
+                    K --> L["Criação de Templates de SEO por Tipo de Documento"]
+                    L --> M["Integração de Keywords nos Textos e Seções (Títulos, Subtítulos, etc.)"]
+                    M --> N["Geração de Relatórios de SEO e Otimização de Conteúdo"]
+                    N --> O["Validação Técnica de SEO (Monitoramento inicial)"]
+                end
+                
+                %% Seção de SEO Off-Page (em paralelo)
+                subgraph SEO_Off_Page ["SEO Off-Page"]
+                    P["Início da Implementação de SEO Off-Page"] --> Q["Criação de Conteúdo Externo e Interno"]
+                    Q --> R["Conteúdo Compartilhável"]
+                    Q --> S["Guest Blogging"]
+                    Q --> T["Colaboração com Parceiros"]
+                    R --> U["Aumentar Distribuição Interna e Externa"]
+                    S --> V["Publicação de Artigos em Blogs Externos"]
+                    T --> W["Obtenção de Backlinks de Alta Qualidade"]
+                    U --> X["Aumento do Engajamento Social (Redes Sociais, Bookmarking)"]
+                    V --> Y["Maior Autoridade Organizacional e Visibilidade"]
+                    W --> Z["Integração em Plataformas de Bookmarking (Delicious)"]
+                end
+                
+                %% Seção de Monitoramento (em paralelo)
+                subgraph Monitoramento ["Monitoramento e Análise do Desempenho SEO"]
+                    AA["Monitoramento e Análise do Desempenho SEO"] --> BB["Monitorar Palavras-Chave em Ferramentas Analíticas (Google Analytics, SEMrush)"]
+                    BB --> CC["Avaliação do Tráfego por Palavras-Chave"]
+                    BB --> DD["Análise de Backlinks e Autoridade"]
+                    BB --> EE["Métricas de Conversão e Engajamento"]
+                    CC --> FF["Ajustar Estratégias de SEO (Baseado em Métricas)"]
+                    DD --> GG["Refinar Palavras-Chave e Otimização Externa"]
+                    EE --> HH["Geração de Relatórios para Ações Finais"]
+                    FF --> II["Ciclo Contínuo de Otimização de Palavras-Chave e Estratégias SEO"]
+                    GG --> II
+                    HH --> JJ["Relatórios de Desempenho Final para Tomada de Decisões"]
+                end
+                
+                %% Finalização do Processo
+                O --> KK["Fim do Processo de SEO On-Page"]
+                Z --> KK
+                II --> KK
+                JJ --> KK["Fim do Processo de Integração SEO e Gestão da Informação"]
+            </div>
+            
     </div>
-
-    <!-- Caixa de Descrição -->
-    <div id="overlay"></div>
-    <div id="description-box">
-        <p id="description-text"></p>
-        <button onclick="closeDescription()">Fechar</button>
-    </div>
-
-    <script>
-        // Descrições detalhadas para os nós
-        const descriptions = {
-            "A": `
-                <b>Pesquisa e Seleção de Palavras-Chave</b><br>
-                <b>Objetivo:</b> Mapear as necessidades informacionais da organização e selecionar palavras-chave que refletem o conteúdo informacional.<br>
-                <b>Etapas:</b><br>
-                1. Levantamento das Necessidades Informacionais<br>
-                2. Identificação de Palavras-Chave<br>
-                3. Análise de Tendências<br>
-                4. Criação de um Documento de Estratégia de Palavras-Chave<br>
-                <b>Saída:</b> Lista de palavras-chave e temas críticos.
-            `,
-            "B": `
-                <b>Implementação de SEO On-Page</b><br>
-                <b>Objetivo:</b> Estruturar e organizar as informações da organização para facilitar a recuperação interna e melhorar a visibilidade nos mecanismos de busca.<br>
-                <b>Etapas:</b><br>
-                1. Meta Tags<br>
-                2. Tags de título<br>
-                3. Meta Descrição<br>
-                4. Tags de Cabeçalho (H1, H2, etc.)<br>
-                5. Palavras-chave<br>
-                6. Otimização de Imagens<br>
-                <b>Saída:</b> Organização eficiente e visibilidade nos sistemas internos e externos.
-            `,
-            "C": `
-                <b>Aplicação de SEO Off Page</b><br>
-                <b>Objetivo:</b> Fortalecer a autoridade e visibilidade das informações organizacionais através de estratégias externas.<br>
-                <b>Etapas:</b><br>
-                1. Conteúdo Compartilhável<br>
-                2. Interação organizacional<br>
-                3. Marcação Social<br>
-                4. Criação de Perfis e Envio de Artigos<br>
-                <b>Saída:</b> Autoridade e confiança nas informações publicadas.
-            `,
-            "D": `
-                <b>Monitoramento e Análise de Desempenho</b><br>
-                <b>Objetivo:</b> Monitorar continuamente o desempenho das informações e avaliar a eficácia das estratégias de SEO.<br>
-                <b>Etapas:</b><br>
-                1. Rastrear o Desempenho de Palavras-Chave<br>
-                2. Avaliar as Taxas de Conversão de Informações<br>
-                3. Gerar Relatórios de Desempenho<br>
-                4. Ajustar Estratégias<br>
-                <b>Saída:</b> Melhorias contínuas e estratégias mais eficazes.
-            `
-        };
-
-        // Adiciona eventos para interatividade
-        document.addEventListener("DOMContentLoaded", () => {
-            const graphContainer = document.getElementById("graph-container");
-
-            // Aguarda o gráfico ser renderizado pelo Mermaid.js
-            setTimeout(() => {
-                const nodes = graphContainer.querySelectorAll("g[class^='node']");
-                nodes.forEach(node => {
-                    const nodeId = node.getAttribute("id"); // ID do nó
-                    if (descriptions[nodeId]) {
-                        node.addEventListener("click", () => {
-                            showDescription(descriptions[nodeId]);
-                        });
-                    }
-                });
-            }, 500); // Delay para garantir que o Mermaid.js termine de renderizar
-        });
-
-        // Função para exibir a descrição
-        function showDescription(description) {
-            const overlay = document.getElementById("overlay");
-            const box = document.getElementById("description-box");
-            const descriptionText = document.getElementById("description-text");
-
-            descriptionText.innerHTML = description;
-            overlay.style.display = "block";
-            box.style.display = "block";
-        }
-
-        // Função para fechar a descrição
-        function closeDescription() {
-            const overlay = document.getElementById("overlay");
-            const box = document.getElementById("description-box");
-
-            overlay.style.display = "none";
-            box.style.display = "none";
-        }
-    </script>
 </body>
 </html>
-
