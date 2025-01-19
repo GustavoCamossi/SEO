@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxograma Completo</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        // Configuração do Mermaid.js
+        document.addEventListener("DOMContentLoaded", function () {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: "default",
+                flowchart: {
+                    htmlLabels: true
+                }
+            });
+        });
+
+        // Função para alternar visibilidade do pop-up
+        function togglePopup(id) {
+            const popup = document.getElementById(id);
+            if (popup.style.display === "block") {
+                popup.style.display = "none";
+            } else {
+                popup.style.display = "block";
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .mermaid {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .popup h3 {
+            margin-top: 0;
+        }
+        .popup button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fluxograma Completo</h1>
+    <div class="mermaid">
+        graph TD
+            A["Início: Integração de SEO na Gestão da Informação"] --> B["Identificação de Palavras-Chave (Ferramentas de SEO)"]
+            B --> C["Análise de Tendências e Competitividade (Google Trends, etc.)"]
+            C --> D["Palavras-chave não atuais (descartar)"]
+            C --> E["Palavras-chave Relevantes (Reforçar)"]
+            C --> F["Competitividade Média"]
+            
+            E --> G["Refinamento de Palavras-Chave (ferramentas avançadas: Ahrefs, etc.)"]
+            F --> G
+            
+            G --> H["Integração de Palavras-Chave no Plano de Conteúdo da Empresa"]
+            H --> I["Mapeamento de Conteúdos para Otimização SEO On-Page"]
+            H --> KK["Fim do Processo de Integração SEO e Gestão da Informação"]
+            H --> J["Classificação e Organização de Informações por Prioridade SEO"]
+            
+            %% Seção de SEO On-Page
+            subgraph SEO_On_Page ["SEO On-Page"]
+                I --> J["Classificação e Organização de Informações por Prioridade SEO"]
+                J --> K["Aplicar Otimização de Meta Tags por Categoria de Conteúdo (dinâmica)"]
+                K --> L["Criação de Templates de SEO por Tipo de Documento"]
+                L --> M["Integração de Keywords nos Textos e Seções (Títulos, Subtítulos, etc.)"]
+                M --> N["Geração de Relatórios de SEO e Otimização de Conteúdo"]
+                N --> O["Validação Técnica de SEO (Monitoramento inicial)"]
+            end
+            
+            %% Seção de SEO Off-Page (em paralelo)
+            subgraph SEO_Off_Page ["SEO Off-Page"]
+                P["Início da Implementação de SEO Off-Page"] --> Q["Criação de Conteúdo Externo e Interno"]
+                Q --> R["Conteúdo Compartilhável"]
+                Q --> S["Guest Blogging"]
+                Q --> T["Colaboração com Parceiros"]
+                R --> U["Aumentar Distribuição Interna e Externa"]
+                S --> V["Publicação de Artigos em Blogs Externos"]
+                T --> W["Obtenção de Backlinks de Alta Qualidade"]
+                U --> X["Aumento do Engajamento Social (Redes Sociais, Bookmarking)"]
+                V --> Y["Maior Autoridade Organizacional e Visibilidade"]
+                W --> Z["Integração em Plataformas de Bookmarking (Delicious)"]
+            end
+            
+            %% Seção de Monitoramento (em paralelo)
+            subgraph Monitoramento ["Monitoramento e Análise do Desempenho SEO"]
+                AA["Monitoramento e Análise do Desempenho SEO"] --> BB["Monitorar Palavras-Chave em Ferramentas Analíticas (Google Analytics, SEMrush)"]
+                BB --> CC["Avaliação do Tráfego por Palavras-Chave"]
+                BB --> DD["Análise de Backlinks e Autoridade"]
+                BB --> EE["Métricas de Conversão e Engajamento"]
+                CC --> FF["Ajustar Estratégias de SEO (Baseado em Métricas)"]
+                DD --> GG["Refinar Palavras-Chave e Otimização Externa"]
+                EE --> HH["Geração de Relatórios para Ações Finais"]
+                FF --> II["Ciclo Contínuo de Otimização de Palavras-Chave e Estratégias SEO"]
+                GG --> II
+                HH --> JJ["Relatórios de Desempenho Final para Tomada de Decisões"]
+            end
+            
+            %% Finalização do Processo
+            O --> KK["Fim do Processo de SEO On-Page"]
+            Z --> KK
+            II --> KK
+            JJ --> KK["Fim do Processo de Integração SEO e Gestão da Informação"]
+    </div>
+
+    <div id="popup-A" class="popup">
+        <h3>Início</h3>
+        <p>Este é o ponto de partida para integrar as práticas de SEO à gestão da informação na sua organização. O objetivo é otimizar a organização, recuperação e disseminação de informações, tanto para usuários internos quanto externos, através de um processo estruturado e contínuo.</p>
+        <button onclick="togglePopup('popup-A')">Fechar</button>
+    </div>
+    <div id="popup-B" class="popup">
+        <h3>Identificação de Palavras-Chave</h3>
+        <p>Objetivo: Identificar os termos mais relevantes que os usuários utilizam para buscar informações relacionadas ao seu negócio, área de atuação ou setor.</p>
+        <p>Ações: Utilize ferramentas de pesquisa de palavras-chave como Google Keyword Planner, SEMrush e Ahrefs. Analise os termos mais buscados nos sistemas de informação da organização e realize pesquisas com usuários para entender suas necessidades informacionais.</p>
+        <button onclick="togglePopup('popup-B')">Fechar</button>
+    </div>
+    <div id="popup-C" class="popup">
+        <h3>Análise de Tendências e Competitividade</h3>
+        <p>Objetivo: Avaliar a relevância das palavras-chave identificadas, considerando as tendências de busca e a competitividade no mercado.</p>
+        <p>Ações: Utilize ferramentas como Google Trends para analisar as tendências de busca. Avalie o volume de buscas, a concorrência e a dificuldade de ranqueamento para cada palavra-chave. Identifique quais palavras-chave são mais promissoras para a sua estratégia.</p>
+        <button onclick="togglePopup('popup-C')">Fechar</button>
+    </div>
+    <div id="popup-D" class="popup">
+        <h3>Palavras-chave não atuais</h3>
+        <p>Objetivo: Descartar palavras-chave que não são mais relevantes para o seu público ou que possuem baixa popularidade.</p>
+        <p>Ações: Analise as palavras-chave identificadas e remova aquelas que não geram tráfego relevante, que estão desatualizadas ou que não se alinham com os seus objetivos de negócio.</p>
+        <button onclick="togglePopup('popup-D')">Fechar</button>
+    </div>
+    <div id="popup-E" class="popup">
+        <h3>Palavras-chave Relevantes</h3>
+        <p>Objetivo: Selecionar as palavras-chave mais relevantes para a sua estratégia de SEO, com base na análise de tendências e competitividade.</p>
+        <p>Ações: Priorize as palavras-chave com alto volume de buscas, baixa concorrência e alta relevância para o seu público. Crie um documento para registrar as palavras-chave selecionadas e suas variações.</p>
+        <button onclick="togglePopup('popup-E')">Fechar</button>
+    </div>
+    <div id="popup-F" class="popup">
+        <h3>Competitividade Média</h3>
+        <p>Objetivo: Identificar palavras-chave com nível de competitividade moderado, que podem ser trabalhadas com estratégias de SEO eficazes.</p>
+        <p>Ações: Avalie a dificuldade de ranqueamento para cada palavra-chave. Utilize ferramentas de análise de backlinks e conteúdo para identificar oportunidades de otimização.</p>
+        <button onclick="togglePopup('popup-F')">Fechar</button>
+    </div>
+    <div id="popup-G" class="popup">
+        <h3>Refinamento de Palavras-Chave</h3>
+        <p>Objetivo: Aprimorar a sua lista de palavras-chave, utilizando ferramentas avançadas de SEO.</p>
+        <p>Ações: Utilize ferramentas como Ahrefs e SEMrush para analisar a concorrência, identificar novas palavras-chave e encontrar oportunidades de otimização. Realize testes A/B para avaliar a performance de diferentes palavras-chave.</p>
+        <button onclick="togglePopup('popup-G')">Fechar</button>
+    </div>
+    <div id="popup-H" class="popup">
+        <h3>Integração de Palavras-Chave</h3>
+        <p>Objetivo: Integrar as palavras-chave selecionadas ao plano de conteúdo da empresa, garantindo que sejam utilizadas de forma estratégica em todos os materiais.</p>
+        <p>Ações: Inclua as palavras-chave em títulos, subtítulos, textos, meta descrições e URLs. Crie um calendário editorial que leve em consideração as palavras-chave prioritárias.</p>
+        <button onclick="togglePopup('popup-H')">Fechar</button>
+    </div>
+    <div id="popup-I" class="popup">
+        <h3>Mapeamento de Conteúdos</h3>
+        <p>Objetivo: Mapear os conteúdos existentes e planejar novos conteúdos com base nas palavras-chave selecionadas e nas necessidades do público.</p>
+        <p>Ações: Realize um inventário dos conteúdos existentes e classifique-os por tema e relevância. Identifique lacunas de conteúdo e planeje a criação de novos materiais que atendam às necessidades do público e explorem as palavras-chave prioritárias.</p>
+        <button onclick="togglePopup('popup-I')">Fechar</button>
+    </div>
+    <div id="popup-J" class="popup">
+        <h3>Classificação e Organização</h3>
+        <p>Objetivo: Classificar e organizar as informações de forma lógica e estruturada, utilizando as palavras-chave como guia.</p>
+        <p>Ações: Crie categorias e subcategorias de conteúdo. Utilize as palavras-chave para nomear as categorias e organizar os conteúdos de forma hierárquica. Utilize tags e metadados para facilitar a busca e a recuperação de informações.</p>
+        <button onclick="togglePopup('popup-J')">Fechar</button>
+    </div>
+    <div id="popup-K" class="popup">
+        <h3>Otimização de Meta Tags</h3>
+        <p>Objetivo: Otimizar as meta tags de cada página, utilizando as palavras-chave relevantes e descrições concisas e informativas.</p>
+        <p>Ações: Crie meta descrições com no máximo 160 caracteres, que incluam as palavras-chave principais e um chamado para ação. Utilize ferramentas de análise de meta tags para garantir a otimização.</p>
+        <button onclick="togglePopup('popup-K')">Fechar</button>
+    </div>
+    <div id="popup-L" class="popup">
+        <h3>Criação de Templates</h3>
+        <p>Objetivo: Criar templates de SEO para diferentes tipos de documentos, garantindo a padronização e a otimização do conteúdo.</p>
+        <p>Ações: Crie templates para artigos, notícias, páginas de produtos, etc. Inclua nos templates campos para preenchimento de meta tags, títulos otimizados e palavras-chave relevantes.</p>
+        <button onclick="togglePopup('popup-L')">Fechar</button>
+    </div>
+    <div id="popup-M" class="popup">
+        <h3>Integração de Keywords</h3>
+        <p>Objetivo: Integrar as palavras-chave selecionadas nos textos e seções do conteúdo, de forma natural e relevante.</p>
+        <p>Ações: Utilize as palavras-chave em títulos, subtítulos, parágrafos e legendas. Evite o excesso de palavras-chave (keyword stuffing) e priorize a clareza e a legibilidade do texto.</p>
+        <button onclick="togglePopup('popup-M')">Fechar</button>
+    </div>
+    <div id="popup-N" class="popup">
+        <h3>Geração de Relatórios</h3>
+        <p>Objetivo: Gerar relatórios de SEO e otimização de conteúdo para acompanhar o progresso e identificar áreas de melhoria.</p>
+        <p>Ações: Utilize ferramentas de análise de SEO para gerar relatórios sobre o desempenho das palavras-chave, o tráfego do site, os backlinks e outras métricas relevantes. Utilize os relatórios para identificar os pontos fortes e fracos da sua estratégia e tomar decisões estratégicas.</p>
+        <button onclick="togglePopup('popup-N')">Fechar</button>
+    </div>
+    <div id="popup-O" class="popup">
+        <h3>Validação Técnica de SEO</h3>
+        <p>Objetivo: Realizar uma validação técnica do SEO para garantir que o site esteja otimizado para os mecanismos de busca.</p>
+        <p>Ações: Utilize ferramentas de auditoria de SEO para identificar e corrigir erros técnicos que podem prejudicar o ranqueamento do site, como erros de rastreamento, links quebrados, conteúdo duplicado e velocidade de carregamento lenta.</p>
+        <button onclick="togglePopup('popup-O')">Fechar</button>
+    </div>
+    <div id="popup-P" class="popup">
+        <h3>Início da Implementação</h3>
+        <p>Objetivo: Iniciar a implementação da estratégia de SEO Off-Page, que visa construir a autoridade e a reputação do site através de links externos e outras ações fora do ambiente do site.</p>
+        <p>Ações: Defina as estratégias de link building, guest blogging, colaboração com parceiros e divulgação em redes sociais. Crie um cronograma para a implementação das ações de SEO Off-Page.</p>
+        <button onclick="togglePopup('popup-P')">Fechar</button>
+    </div>
+    <div id="popup-Q" class="popup">
+        <h3>Criação de Conteúdo</h3>
+        <p>Objetivo: Criar conteúdo relevante e de alta qualidade para atrair backlinks, aumentar o tráfego do site e gerar engajamento com o público.</p>
+        <p>Ações: Crie conteúdo original e informativo, que seja útil para o seu público-alvo. Utilize diferentes formatos de conteúdo, como artigos, vídeos, infográficos e ebooks. Promova o conteúdo criado em diferentes canais, como redes sociais, e-mail marketing e guest blogging.</p>
+        <button onclick="togglePopup('popup-Q')">Fechar</button>
+    </div>
+    <div id="popup-R" class="popup">
+        <h3>Conteúdo Compartilhável</h3>
+        <p>Objetivo: Criar conteúdo que seja facilmente compartilhado nas redes sociais e em outras plataformas online.</p>
+        <p>Ações: Crie conteúdo visualmente atraente, com títulos chamativos e informações relevantes. Utilize diferentes formatos de conteúdo, como infográficos, vídeos curtos e listas. Inclua botões de compartilhamento social em todas as páginas do site.</p>
+        <button onclick="togglePopup('popup-R')">Fechar</button>
+    </div>
+    <div id="popup-S" class="popup">
+        <h3>Guest Blogging</h3>
+        <p>Objetivo: Escrever artigos para outros blogs e sites relevantes do seu setor, com o objetivo de gerar backlinks e aumentar a visibilidade da sua marca.</p>
+        <p>Ações: Identifique blogs e sites relevantes do seu setor que aceitam guest posts. Crie conteúdo original e de alta qualidade para esses sites, incluindo links para o seu próprio site.</p>
+        <button onclick="togglePopup('popup-S')">Fechar</button>
+    </div>
+    <div id="popup-T" class="popup">
+        <h3>Colaboração com Parceiros</h3>
+        <p>Objetivo: Estabelecer parcerias com outras empresas e influenciadores do seu setor para promover o seu conteúdo e gerar backlinks.</p>
+        <p>Ações: Identifique potenciais parceiros que possuem público-alvo similar ao seu. Crie campanhas de co-marketing, participe de eventos conjuntos e promova o conteúdo uns dos outros.</p>
+        <button onclick="togglePopup('popup-T')">Fechar</button>
+    </div>
+    <div id="popup-U" class="popup">
+        <h3>Aumentar Distribuição</h3>
+        <p>Objetivo: Aumentar a distribuição do seu conteúdo, tanto internamente quanto externamente, para alcançar um público maior e gerar mais backlinks.</p>
+        <p>Ações: Promova o seu conteúdo em diferentes canais, como redes sociais, e-mail marketing, newsletters e fóruns online. Incentive o compartilhamento do conteúdo pelos seus colaboradores e parceiros.</p>
+        <button onclick="togglePopup('popup-U')">Fechar</button>
+    </div>
+    <div id="popup-V" class="popup">
+        <h3>Publicação de Artigos</h3>
+        <p>Objetivo: Publicar artigos em blogs e sites externos relevantes para gerar backlinks, aumentar o tráfego do site e construir a autoridade da sua marca.</p>
+        <p>Ações: Identifique sites e blogs que aceitam artigos de autores convidados. Crie conteúdo original e de alta qualidade que seja relevante para o público desses sites. Inclua links para o seu site nos artigos publicados.</p>
+        <button onclick="togglePopup('popup-V')">Fechar</button>
+    </div>
+    <div id="popup-W" class="popup">
+        <h3>Obtenção de Backlinks</h3>
+        <p>Objetivo: Obter backlinks de alta qualidade de sites relevantes do seu setor para aumentar a autoridade do seu site e melhorar o seu ranqueamento nos mecanismos de busca.</p>
+        <p>Ações: Utilize diferentes estratégias de link building, como guest blogging, divulgação de conteúdo em diretórios e fóruns, criação de infográficos e construção de relacionamentos com outros sites. Concentre-se em obter backlinks de sites com alta autoridade e relevância para o seu nicho.</p>
+        <button onclick="togglePopup('popup-W')">Fechar</button>
+    </div>
+    <div id="popup-X" class="popup">
+        <h3>Aumento do Engajamento</h3>
+        <p>Objetivo: Aumentar o engajamento social nas redes sociais e em plataformas de bookmarking para promover o seu conteúdo, gerar tráfego para o site e construir a sua marca.</p>
+        <p>Ações: Crie perfis nas principais redes sociais e plataformas de bookmarking. Publique conteúdo relevante e interaja com o seu público. Utilize hashtags relevantes e participe de grupos e comunidades online.</p>
+        <button onclick="togglePopup('popup-X')">Fechar</button>
+    </div>
+    <div id="popup-Y" class="popup">
+        <h3>Maior Autoridade</h3>
+        <p>Objetivo: Aumentar a autoridade da sua organização e a visibilidade da sua marca através de ações de SEO Off-Page.</p>
+        <p>Ações: Construa backlinks de alta qualidade, participe de eventos e publique conteúdo relevante em sites e blogs do seu setor. Promova a sua marca nas redes sociais e interaja com o seu público.</p>
+        <button onclick="togglePopup('popup-Y')">Fechar</button>
+    </div>
+    <div id="popup-Z" class="popup">
+        <h3>Integração em Plataformas</h3>
+        <p>Objetivo: Integrar o seu conteúdo em plataformas de bookmarking como Delicious, para aumentar a visibilidade e gerar tráfego para o site.</p>
+        <p>Ações: Crie um perfil na plataforma Delicious e adicione os seus conteúdos mais relevantes. Utilize tags e descrições relevantes para facilitar a busca e o acesso ao seu conteúdo.</p>
+        <button onclick="togglePopup('popup-Z')">Fechar</button>
+    </div>
+    <div id="popup-AA" class="popup">
+        <h3>Monitoramento e Análise</h3>
+        <p>Objetivo: Monitorar e analisar o desempenho das suas estratégias de SEO, tanto On-Page quanto Off-Page, para identificar os pontos fortes e fracos e ajustar as suas ações.</p>
+        <p>Ações: Utilize ferramentas de análise de SEO como Google Analytics e SEMrush para acompanhar as principais métricas, como tráfego do site, ranqueamento das palavras-chave, backlinks e engajamento social. Gere relatórios periódicos para avaliar o progresso e identificar áreas de melhoria.</p>
+        <button onclick="togglePopup('popup-AA')">Fechar</button>
+    </div>
+    <div id="popup-BB" class="popup">
+        <h3>Monitorar Palavras-Chave</h3>
+        <p>Objetivo: Monitorar o desempenho das suas palavras-chave nos mecanismos de busca, para identificar quais termos geram mais tráfego e quais precisam ser otimizados.</p>
+        <p>Ações: Utilize ferramentas de análise de SEO para acompanhar o ranqueamento das suas palavras-chave nos resultados de busca. Avalie o volume de buscas, a posição média e a taxa de cliques para cada palavra-chave.</p>
+        <button onclick="togglePopup('popup-BB')">Fechar</button>
+    </div>
+    <div id="popup-CC" class="popup">
+        <h3>Avaliação do Tráfego</h3>
+        <p>Objetivo: Avaliar o tráfego do site por palavras-chave, para identificar quais termos geram mais visitas e quais páginas precisam ser otimizadas.</p>
+        <p>Ações: Utilize ferramentas de análise de tráfego como Google Analytics para identificar as principais fontes de tráfego, as páginas mais visitadas e o comportamento dos usuários no site. Avalie o tráfego gerado por cada palavra-chave e identifique oportunidades de otimização.</p>
+        <button onclick="togglePopup('popup-CC')">Fechar</button>
+    </div>
+    <div id="popup-DD" class="popup">
+        <h3>Análise de Backlinks</h3>
+        <p>Objetivo: Analisar os backlinks do seu site para identificar a qualidade e a relevância dos links, e para identificar novas oportunidades de link building.</p>
+        <p>Ações: Utilize ferramentas de análise de backlinks para identificar os sites que linkam para o seu site, a autoridade desses sites e a relevância dos links. Avalie a qualidade dos backlinks e identifique oportunidades de construir novos backlinks. Entre em contato com os webmasters para solicitar a remoção de backlinks de baixa qualidade ou spam.</p>
+        <button onclick="togglePopup('popup-DD')">Fechar</button>
+        </div>
+        <div id="popup-EE" class="popup">
+        <h3>Métricas de Conversão</h3>
+        <p>Objetivo: Analisar as métricas de conversão e engajamento para avaliar a efetividade das suas estratégias de SEO e identificar oportunidades de melhoria.</p>
+        <p>Ações: Utilize ferramentas de análise de SEO para acompanhar as principais métricas de conversão, como taxa de conversão de leads, taxa de rejeição, tempo de permanência no site e páginas por visita. Avalie o impacto das suas ações de SEO nas taxas de conversão e identifique oportunidades de otimização.</p>
+        <button onclick="togglePopup('popup-EE')">Fechar</button>
+        </div>
+        <div id="popup-FF" class="popup">
+        <h3>Ajustar Estratégias</h3>
+        <p>Objetivo: Ajustar as estratégias de SEO com base nas análises e nos resultados obtidos, para garantir a otimização contínua do seu site e dos seus conteúdos.</p>
+        <p>Ações: Avalie os relatórios de desempenho e as análises de tráfego, backlinks e conversão. Identifique os pontos fortes e fracos da sua estratégia e faça os ajustes necessários nas suas ações de SEO On-Page e Off-Page.</p>
+        <button onclick="togglePopup('popup-FF')">Fechar</button>
+        </div>
+        <div id="popup-GG" class="popup">
+        <h3>Refinar Palavras-Chave</h3>
+        <p>Objetivo: Refinar a sua estratégia de palavras-chave, adicionando novas palavras-chave relevantes e removendo termos que não geram resultados satisfatórios.</p>
+        <p>Ações: Realize novas pesquisas de palavras-chave e analise as tendências de busca. Avalie o desempenho das suas palavras-chave atuais e faça os ajustes necessários na sua lista. Otimize o seu conteúdo para as novas palavras-chave adicionadas.</p>
+        <button onclick="togglePopup('popup-GG')">Fechar</button>
+        </div>
+        <div id="popup-HH" class="popup">
+        <h3>Geração de Relatórios</h3>
+        <p>Objetivo: Gerar relatórios detalhados sobre o desempenho das suas estratégias de SEO, para acompanhar o progresso e apresentar os resultados para as partes interessadas.</p>
+        <p>Ações: Crie relatórios periódicos com as principais métricas de SEO, como tráfego do site, ranqueamento das palavras-chave, backlinks, conversões e engajamento social. Apresente os relatórios para a equipe de marketing, gestores e outras partes interessadas.</p>
+        <button onclick="togglePopup('popup-HH')">Fechar</button>
+        </div>
+        <div id="popup-II" class="popup">
+        <h3>Ciclo Contínuo</h3>
+        <p>Objetivo: Manter um ciclo contínuo de otimização de palavras-chave e estratégias de SEO, para garantir que o seu site e os seus conteúdos estejam sempre atualizados e relevantes para o seu público.</p>
+        <p>Ações: Monitore as tendências de busca, as mudanças nos algoritmos dos mecanismos de busca e o desempenho das suas estratégias de SEO. Ajuste as suas ações de SEO On-Page e Off-Page conforme necessário. Realize novas pesquisas de palavras-chave e otimize o seu conteúdo regularmente.</p>
+        <button onclick="togglePopup('popup-II')">Fechar</button>
+        </div>
+        <div id="popup-JJ" class="popup">
+        <h3>Relatórios de Desempenho</h3>
+        <p>Objetivo: Gerar relatórios de desempenho final para a tomada de decisões estratégicas, com base nos resultados das suas estratégias de SEO.</p>
+        <p>Ações: Crie relatórios completos que demonstrem o impacto das suas ações de SEO nos resultados da sua organização, como aumento do tráfego do site, geração de leads, vendas e reconhecimento da marca. Utilize os relatórios para justificar o investimento em SEO e para tomar decisões estratégicas sobre o futuro da sua estratégia online.</p>
+        <button onclick="togglePopup('popup-JJ')">Fechar</button>
+        </div>
+        <div id="popup-KK" class="popup">
+        <h3>Fim do Processo</h3>
+        <p>Objetivo: Concluir o processo de integração entre SEO e gestão da informação, tendo alcançado os objetivos de otimização e organização do conteúdo.</p>
+        <p>Ações: Avaliar os resultados finais da sua estratégia de SEO e analisar o impacto na gestão da informação da sua organização. Documentar as lições aprendidas e os desafios encontrados durante o processo. Celebrar o sucesso da integração entre SEO e gestão da informação.</p>
+        <button onclick="togglePopup('popup-KK')">Fechar</button>
+        </div>      
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                const popupMap = {
+                    A: "popup-A",
+                    B: "popup-B",
+                    C: "popup-C",
+                    D: "popup-D",
+                    E: "popup-E",
+                    F: "popup-F",
+                    G: "popup-G",
+                    H: "popup-H",
+                    I: "popup-I",
+                    J: "popup-J",
+                    K: "popup-K",
+                    L: "popup-L",
+                    M: "popup-M",
+                    N: "popup-N",
+                    O: "popup-O",
+                    P: "popup-P",
+                    Q: "popup-Q",
+                    R: "popup-R",
+                    S: "popup-S",
+                    T: "popup-T",
+                    U: "popup-U",
+                    V: "popup-V",
+                    W: "popup-W",
+                    X: "popup-X",
+                    Y: "popup-Y",
+                    Z: "popup-Z",
+                    AA: "popup-AA",
+                    BB: "popup-BB",
+                    CC: "popup-CC",
+                    DD: "popup-DD",
+                    EE: "popup-EE",
+                    FF: "popup-FF",
+                    GG: "popup-GG",
+                    HH: "popup-HH",
+                    II: "popup-II",
+                    JJ: "popup-JJ",
+                    KK: "popup-KK" 
+                    // ... adicione os demais mapeamentos aqui
+                };
+
+                Object.keys(popupMap).forEach(id => {
+                    const box = document.querySelector(`div.mermaid g[id*="${id}"]`);
+                    if (box) {
+                        box.style.cursor = "pointer";
+                        box.addEventListener("click", () => togglePopup(popupMap[id]));
+                    }
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
